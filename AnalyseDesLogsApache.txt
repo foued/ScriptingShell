@@ -1,0 +1,28 @@
+Exercice1: Ecrire un script bash qui pemet d'analyser des logs apache pour faire des statistiques sur les IP qui consultent notre apache
+
+l'objectif c'est pour chaque date on affiche les ip et le nombre de fois qu'ils ont consulté apache
+
+pour une date 08/Decembre/2020 par exemple.
+
+Corrigé:
+
+#! /bin/bash/
+1- cat /var/log/apache2/accesss.log |
+
+2-awk '
+{
+3-match ($4,/\[(.*):/)
+4-gsub(":.*|\[","",$4)
+5-tab[$4" -"$1]++
+}
+END
+{
+6-for(datehost in tab)
+7-print datehost" -this: tab[date]
+}'
+
+Explication:
+La ligne 1 permet d'ouvrir le fichier log access de Apache
+la ligne 3 permet de récuperer le jour avec l'heure et le crochet
+$1 c'est la variable qui permet d'afficher l'adresse ip 
+le $4 c'est la 4 eme colonne du fichier est qui la date au complet [08/12/2020:20:22:13 +0100] 

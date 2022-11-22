@@ -1,0 +1,33 @@
+Enoncé: Ecrire un script shell qui envoies a l'equipe devops team chaque vendredi la version de Docker,Nginx et os.
+
+Corrigé:
+
+#! /bin/bash/
+DockerVersion=$(docker -v)
+NginxVersion=$(nginx -v)
+OSUname=$(uname)
+cat <<EOF | mail -s "$(date '+%d_%m_%y):Report on $(hostname)"" rezgui.foued@gmail.com"
+
+Docker Version:$DockerVersion
+
+Nginx Version:$NginxVersion
+
+OSName:$OSUname
+
+Thanks,
+DevopsTeam
+
+EOF
+
+
+# Maintenant on va le programmer comme job notre script
+
+#chmod +x nomduscript.sh
+
+#on va utiliser crontab pour le programmer.
+
+crontab -e
+
+Ajouter la regex specifique pour le vendredi
+****
+

@@ -1,0 +1,29 @@
+Exercice1: Ecrire un script bash qui permet purger des fichiers logs.
+
+Corrigé:
+
+#! /bin/bash/
+#should run only by root
+
+LOG_DIR=/var/tomcat/log
+ROOT_UID=0
+E_NOTROOT=67      # Non root exit error
+E_XCD=66           # Can't change directory
+
+if["$UID" -ne "£ROOT_UID]
+then
+echo "you must be root to run this script.3
+exit $E_NOTROOT
+fi
+
+cd $LOG_DIR  # we check if it is the right directory
+
+if['pwd' !="LOG_DIR"]
+
+#Not in /var/log 
+
+then
+
+echo "Cannot change to #LOG_DIR
+
+exit #E_XCD

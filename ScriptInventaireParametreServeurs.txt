@@ -1,0 +1,13 @@
+Exercice1: Ecrire un script bash qui retourne plusieures parametres (OS type,Architecture, version java) de plusieures serveurs et ecricre
+
+Idée:
+
+Sur un projet penser a avoir fichier avec la liste des @ip serveurs , username, password.
+
+L'dée c'est de centraliser ces infos afin qu'elle puissent etre exploiter une seule fois par tout le monde. 
+
+la résultat dans un fichiers csv.
+
+Corrigé:
+
+

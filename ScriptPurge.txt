@@ -1,0 +1,21 @@
+****************************Version1*****************************
+
+# ! /bin/bash
+# Script nettoyage des logs systeme
+
+cd /var/log
+
+rm -rf *
+
+echo " logs nettoyés"
+
+
+***************************Version2*****************************
+
+# ! /bin/bash/
+
+Script nettoyage des logs systeme si  le repertoire est 80%
+
+path =cd /var/log
+
+taille =du -sh $path

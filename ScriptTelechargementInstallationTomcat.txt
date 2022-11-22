@@ -1,0 +1,26 @@
+#Enoncé: Ecrire un script bash qui permet de telecharger et extrait et renomer Tomcat sur une machine linux.
+
+Corrigé:
+
+#! /bin/bash/
+#Telechargement de tomcat
+
+echo"Telechargement tomcat version 8"
+
+# avant de telecharger tomcat il faut s'assurer que les utilitaires wget et unzip sont telecharger
+
+# il faut s'assuer la bonne version jdk est bien installé
+
+
+
+if [pwd==repertoire d'installation]
+yum install wget unzip
+
+wget https://apache.mediamirrors.org/tomcat/tomcat-8/v8.5.60/bin/apache-tomcat-8.5.60.tar.gz
+
+tar -xvzf apache-tomcat-8.5.60.tar.gz
+
+mv apache-tomcat-8.5.60/ tomcat
+
+Chown -R tomcat:tomcat /path de repertoire tomcat
+

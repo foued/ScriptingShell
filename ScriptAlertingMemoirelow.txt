@@ -1,0 +1,31 @@
+Exercice1: Ecrire un script bash qui permet de nous envoyer un mail d'alerting sur une memoire est low
+
+Corrigé:
+
+
+#la commande pour savoir la taille total d'une memoire 
+
+free -mt
+#l'option t veut dire totale, essayer de taper cette commande pour afficher total memoire used et free
+
+#cette commande va nous afficher un tableau de valeur et moi j'ai besoin d'extraire que la valeur du champs free
+#c'est pour ca je vais appliquer un filtre sur le resultat de la commande
+
+free -mt | grep Total:|awk '{print $4}'
+#Et voir l'affichage.
+
+
+**************************************************************
+*************Debut Script***********************
+
+#! /bin/bash/
+
+To="rezgui.foued@gmail.com"
+ram_free=$(free -mt | grep Total:|awk '{print $4}')
+
+if [$ ram_free -le 700]
+then echo "Sending mail because your ram free size is less than 700"
+echo "Subject:warning,RAM free Size is LOW"| sendmail $To
+fi
+
+exit #E_XCD

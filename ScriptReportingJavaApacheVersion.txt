@@ -1,0 +1,11 @@
+Exercice1: Ecrire un script bash qui permet de renvoyer l'ip, java version, et d'autres infos d'un serveur.
+
+Corrigé:
+
+#!/bin/bash
+IPAdresse=(hostname -I)
+OSUname=(uname)
+JAVA_Version=(java -version 2>&1 | grep version)
+echo Votre adresse IP est :$IPAdresse
+echo Votre OS  est :$OSUname
+echo Votre adresse IP est :$JAVA_Version
